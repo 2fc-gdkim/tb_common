@@ -29,6 +29,14 @@ pub fn get_datetime(delimiter: bool) -> String {
     }
 }
 
+pub fn get_utc_date(delimiter: bool) -> String {
+    if delimiter {
+        Utc::now().format("%Y-%m-%d").to_string()
+    }
+    else {
+        Utc::now().format("%Y%m%d").to_string()
+    }
+}
 
 pub fn diff_days(date_string: &str) -> i64 {
     let today = Utc::now();
